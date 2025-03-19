@@ -1,14 +1,12 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-    const totalPrice = quantity * pricePerDroid;
-    if (totalPrice <= customerCredits) {
-        return `You ordered ${quantity} droids worth ${totalPrice} credits!`
-    } else {
-        return "Insufficient funds!";
+function getCommonElements(array1, array2) {
+    const sameElementsArray = [];
+
+    for (let i = 0; i <= array1.length; i++){
+        if (array1.includes(array2[i])) {
+            sameElementsArray.push(array2[i])
+        }
     }
+    return sameElementsArray
 }
 
-console.log(makeTransaction(5, 3000, 23000));
-console.log(makeTransaction(3, 1000, 15000));
-console.log(makeTransaction(10, 5000, 8000));
-console.log(makeTransaction(8, 2000, 10000));
-console.log(makeTransaction(10, 500, 5000)); 
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
